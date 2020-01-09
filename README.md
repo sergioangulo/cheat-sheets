@@ -16,5 +16,6 @@ change /bin/sh to /bin/bash
 sudo groupadd docker
 ## Add your user to the group
 sudo usermod -aG docker sergio
-## Logout
-Well ... logout and enjoy
+## Activates changes to groups or Logout/Login
+newgrp docker
+Or Well ... logout then login and enjoy
