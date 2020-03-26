@@ -19,3 +19,6 @@ sudo usermod -aG docker sergio
 ### Activates changes to groups or Logout/Login
 newgrp docker
 Or Well ... logout then login and enjoy
+
+## Run a script like a daemon
+nohup Script source & 
