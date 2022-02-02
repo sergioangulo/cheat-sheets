@@ -22,3 +22,10 @@ Or Well ... logout then login and enjoy
 
 ## Run a script like a daemon
 nohup Script source & 
+
+## Create a zero-file with an specific size (windows)
+//on Windows
+fsutil file createnew 1MB.dummy 1048576 
+fsutil file createnew testFile_fsutil <1Tb>   
+//(on Linux)
+dd if=/dev/zero of=testFile_dd bs=1024M count=1024  
