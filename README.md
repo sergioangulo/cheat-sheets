@@ -29,3 +29,13 @@ fsutil file createnew 1MB.dummy 1048576
 fsutil file createnew testFile_fsutil <1Tb>   
 //(on Linux)
 dd if=/dev/zero of=testFile_dd bs=1024M count=1024  
+
+## Oracle get limited random rows from table
+``` sql
+SELECT *
+FROM   (
+    SELECT *
+    FROM   MY_CUSTOM_TABLE
+    ORDER BY DBMS_RANDOM.RANDOM)
+WHERE  rownum < 21;
+```
