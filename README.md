@@ -44,7 +44,5 @@ WHERE  rownum < 21;
 ``` bash
 pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
+jupyter nbextensions_configurator enable --user
 ```
-
-### In jupyterlab editor
-jupyter server enable the Nbextensions -> hintland
