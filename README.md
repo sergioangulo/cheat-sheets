@@ -39,3 +39,12 @@ FROM   (
     ORDER BY DBMS_RANDOM.RANDOM)
 WHERE  rownum < 21;
 ```
+## Activate autocompletion Jupyterlab
+
+``` bash
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+```
+
+### In jupyterlab editor
+jupyter server enable the Nbextensions -> hintland
