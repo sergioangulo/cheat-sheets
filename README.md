@@ -46,3 +46,17 @@ pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
 ```
+
+
+
+TDD in python: continuosly run tests
+------------------------------------
+```bash
+$ pip install pytest-watch
+```
+
+```bash
+$ cd myproject
+$ ptw
+ * Watching /path/to/myproject
+```
