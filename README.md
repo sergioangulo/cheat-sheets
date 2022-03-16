@@ -60,3 +60,9 @@ $ cd myproject
 $ ptw
  * Watching /path/to/myproject
 ```
+
+ptw exits in some cases. We can use nodemon to restart it:
+
+```bash
+nodemon -e py --exec ptw
+```
