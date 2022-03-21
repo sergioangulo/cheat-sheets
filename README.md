@@ -90,3 +90,10 @@ from base.moduleA.moduleA import someClass
 4. Start a cmd and run: **conda init**
 5. restart cmd
 6. Voilá! Now you can use **conda activate my-env**
+
+
+## Select a python virtual environment in visual studio code
+1. ctrl + shift + P
+2. search: **Python: Select Interpreter**
+3. Choose your environment
+4. Ready to code!
