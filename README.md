@@ -81,3 +81,12 @@ inside test module
 ```bash
 from base.moduleA.moduleA import someClass
 ```
+
+## Running anaconda console in cmd windows
+1. Search your anaconda instalation dir: (ex: C:\user\Anaconda3)
+3. Add to Path: (edit system environment vars - env vars - click on Path - edit - new )
+    - C:\user\Anaconda3
+    - C:\user\Anaconda3\Scripts
+4. Start a cmd and run: **conda init**
+5. restart cmd
+6. Voilá! Now you can use **conda activate my-env**
