@@ -66,3 +66,18 @@ ptw exits in some cases. We can use nodemon to restart it:
 ```bash
 nodemon -e py --exec ptw
 ```
+The project structure must be:
+
+```bash
+└base
+├── conftest.py
+├── moduleA
+│   ├── __init__.py
+│   └── moduleA.py
+└── tests
+    └── test_module.py
+```
+inside test module 
+```bash
+from base.moduleA.moduleA import someClass
+```
