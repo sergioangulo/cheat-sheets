@@ -58,5 +58,46 @@ DATA=$(printf 'Hello World!'|base64) && gcloud functions call helloWorld --data 
 gcloud functions logs read helloWorld
 ```
 
+## GKE Google Kubernetes Engine
+Configure  default cimoute zone
+
+```   bash
+gcloud config set compute/zone us-central1-a
+```
+
+Create Cluster KGE
+```   bash
+gcloud container clusters create [CLUSTER-NAME]
+```
 
 
+Get cluster credntials to authenticate
+```   bash
+gcloud container clusters get-credentials [CLUSTER-NAME]
+```
+
+Create a new object deployment 
+
+```   bash
+kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
+```
+
+Create an Service Object to expose your app 
+```   bash
+kubectl expose deployment hello-server --type=LoadBalancer --port 8080
+```
+
+Inspect your service to get external-ip
+```   bash
+kubectl get service
+```
+
+Then you can call your app 
+```   bash
+wget http://[EXTERNAL-IP]:8080
+```
+
+Now you can delete your cluster
+```   bash
+gcloud container clusters delete [CLUSTER-NAME]
+```
