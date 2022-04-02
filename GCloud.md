@@ -322,3 +322,25 @@ delete object
 ```   bash
 gsutil rm gs://YOUR-BUCKET-NAME/ada.jpg
 ```
+
+## SQL
+
+Connect to a prevoisuly created instance
+```   bash
+gcloud sql connect myinstance --user=root
+```
+
+``` bash   
+```
+
+``` bash
+```
+
+``` bash
+```
+
+``` bash
+```
+
+``` bash
+```
