@@ -285,3 +285,40 @@ Create a global forwarding rule to resend input requests to proxy:
         --target-http-proxy=http-lb-proxy \
         --ports=80
 ```
+
+## Cloud Storage 
+
+Upload a file to a bucket:
+```   bash
+gsutil cp example_file.jpg gs://YOUR-BUCKET-NAME
+```
+
+Obtener objeto desde deposito
+```   bash
+gsutil cp -r gs://YOUR-BUCKET-NAME/example_file.jpg .
+```
+
+cp objects inside bucket
+```   bash
+gsutil cp gs://YOUR-BUCKET-NAME/example_file.jpg gs://YOUR-BUCKET-NAME/image-folder/
+```
+
+list content of a bucket
+```   bash
+gsutil ls gs://YOUR-BUCKET-NAME
+```
+change access to file to makeit public
+```   bash
+gsutil acl ch -u AllUsers:R gs://YOUR-BUCKET-NAME/example_file.jpg
+```
+
+change public access to private
+
+```   bash
+gsutil acl ch -d AllUsers gs://YOUR-BUCKET-NAME/ada.jpg
+```
+
+delete object
+```   bash
+gsutil rm gs://YOUR-BUCKET-NAME/ada.jpg
+```
