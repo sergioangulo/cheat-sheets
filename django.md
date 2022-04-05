@@ -8,7 +8,7 @@ django-admin startproject myproject
 ## Test installation (run server)
 ``` bash
 python manage.py runserver
-``` bash
+``` 
 
 ## Create an app
 ``` bash
