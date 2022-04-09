@@ -330,11 +330,25 @@ Connect to a prevoisuly created instance
 gcloud sql connect myinstance --user=root
 ```
 
+## Monitoiring
+
+Install a **Cloud monitoring agent** in your instance 
 ``` bash   
+curl -sSO https://dl.google.com/cloudagents/add-monitoring-agent-repo.sh
+sudo bash add-monitoring-agent-repo.sh
+sudo apt-get update
+sudo apt-get install stackdriver-agent
 ```
 
+Install **Cloud logging agent** in your instance
 ``` bash
+curl -sSO https://dl.google.com/cloudagents/add-logging-agent-repo.sh
+sudo bash add-logging-agent-repo.sh
+sudo apt-get update
+sudo apt-get install google-fluentd
 ```
+
+
 
 ``` bash
 ```
