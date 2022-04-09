@@ -330,7 +330,7 @@ Connect to a prevoisuly created instance
 gcloud sql connect myinstance --user=root
 ```
 
-## Monitoiring
+## Monitoring
 
 Install a **Cloud monitoring agent** in your instance 
 ``` bash   
@@ -348,7 +348,27 @@ sudo apt-get update
 sudo apt-get install google-fluentd
 ```
 
+## Dataproc
+Stablish dataproc region
+``` bash
+gcloud config set dataproc/region us-central1
+```
+Create deferault cluster
+``` bash
+gcloud dataproc clusters create example-cluster --worker-boot-disk-size 500
+```
+Send a job
+``` bash
+gcloud dataproc jobs submit spark --cluster example-cluster \
+  --class org.apache.spark.examples.SparkPi \
+  --jars file:///usr/lib/spark/examples/jars/spark-examples.jar -- 1000
+```
+}
 
+Change workers
+``` bash
+gcloud dataproc clusters update example-cluster --num-workers 4
+```
 
 ``` bash
 ```
