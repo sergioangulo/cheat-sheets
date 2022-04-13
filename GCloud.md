@@ -348,6 +348,27 @@ sudo apt-get update
 sudo apt-get install google-fluentd
 ```
 
+## Pub SUb with Python
+See https://github.com/googleapis/python-pubsub/tree/main/samples/snippets for references.
+Look at  publisher.py and subscriber.py
+Examples:
+``` bash
+# Create a topic
+python publisher.py $GOOGLE_CLOUD_PROJECT create MyTopic
+# show all topics in a project
+python publisher.py $GOOGLE_CLOUD_PROJECT list
+#Create a subscription for topic
+python subscriber.py $GOOGLE_CLOUD_PROJECT create MyTopic MySub
+# Show subscriber list in a project
+python subscriber.py $GOOGLE_CLOUD_PROJECT list-in-project
+# Publish some messages in topic
+gcloud pubsub topics publish MyTopic --message "Hello"
+gcloud pubsub topics publish MyTopic --message "Hello2"
+# Extract all msgs
+python subscriber.py $GOOGLE_CLOUD_PROJECT receive MySub
+```
+
+
 ## Dataproc
 Stablish dataproc region
 ``` bash
