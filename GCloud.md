@@ -391,6 +391,59 @@ Change workers
 gcloud dataproc clusters update example-cluster --num-workers 4
 ```
 
+## Dataflow
+create a bigquery dataset 
+``` bash
+bq mk taxirides
+```
+
+instantiate a table in bigquery
+``` bash
+bq mk \
+--time_partitioning_field timestamp \
+--schema ride_id:string,point_idx:integer,latitude:float,longitude:float,\
+timestamp:timestamp,meter_reading:float,meter_increment:float,ride_status:string,\
+passenger_count:integer -t taxirides.realtime
+```
+
+create a bucket
+``` bash
+export BUCKET_NAME=<your-unique-name>
+gsutil mb gs://$BUCKET_NAME/
+```
+
+python 3.7
+``` bash
+docker run -it -e DEVSHELL_PROJECT_ID=$DEVSHELL_PROJECT_ID python:3.7 /bin/bash
+```
+
+install apache beam
+``` bash
+pip install apache-beam[gcp]
+```
+Execute example word count
+``` bash
+python -m apache_beam.examples.wordcount --output OUTPUT_FILE
+```
+
+##Execute pipeline remotely
+save bucket name
+``` bash
+BUCKET=gs://<bucket name provided earlier>
+```
+execute wordcount remotely
+``` bash
+python -m apache_beam.examples.wordcount --project $DEVSHELL_PROJECT_ID \
+  --runner DataflowRunner \
+  --staging_location $BUCKET/staging \
+  --temp_location $BUCKET/temp \
+  --output $BUCKET/results/output \
+  --region us-central1
+```
+
+``` bash
+```
+
 ``` bash
 ```
 
