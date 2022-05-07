@@ -441,6 +441,59 @@ python -m apache_beam.examples.wordcount --project $DEVSHELL_PROJECT_ID \
   --region us-central1
 ```
 
+## Google IAM Nattural language
+cree una cuenta de servicio nueva para acceder a la API de ML
+``` bash
+export GOOGLE_CLOUD_PROJECT=$(gcloud config get-value core/project)
+
+gcloud iam service-accounts create my-natlang-sa \
+  --display-name "my natural language service account"
+```
+Crear credenciales acceso
+``` bash
+gcloud iam service-accounts keys create ~/key.json \
+  --iam-account my-natlang-sa@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
+```
+GUardar key
+``` bash
+export GOOGLE_APPLICATION_CREDENTIALS="/home/USER/key.json"
+```
+Se crea maquina virtual, entre a la mpaquia pos ssh y luego:
+``` bash
+gcloud ml language analyze-entities --content="Michelangelo Caravaggio, Italian painter, is known for 'The Calling of Saint Matthew'." > result.json
+
+cat result.json
+```
+# Speech
+Cree primero clave de api.(APIs & Services -> Credentials-> ´+Create Credemtials -> API key Luego guardela en la maquina ssh creada
+``` bash
+export API-KEY=miclavegeneradalaarga
+```
+
+Cree un archvo para el request llamado request.json
+``` bash
+{
+  "config": {
+      "encoding":"FLAC",
+      "languageCode": "en-US"
+  },
+  "audio": {
+      "uri":"gs://cloud-samples-tests/speech/brooklyn.flac"
+  }
+}
+```
+llamar a la api
+``` bash
+curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
+"https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}"
+```
+
+``` bash
+```
+
+``` bash
+```
+
 ``` bash
 ```
 
