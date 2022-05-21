@@ -17,10 +17,11 @@
 # Problemas típicos con algoritmos:
 - sobreajuste (generalizar en exceso con datos conocidos): modelo demasiado complejo para la cantiddad y el ruido de lods datos de entrenamiento
 - Como soluciono sobreajuste:
-    - simplifique modelo
+    - simplifique modelo : ej. regularizacion
     - reuna mas data de entrenamiento
     - reduzca el ruido:
         - solucione errores
         - eliminar atípicos     
+
 
   
