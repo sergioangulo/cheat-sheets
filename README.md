@@ -82,6 +82,11 @@ inside test module
 from base.moduleA.moduleA import someClass
 ```
 
+In windows when exists troubles:
+```bash
+FOR /L %N IN () DO (@pytest & @timeout 5)
+```
+
 ## Running anaconda console in cmd windows
 1. Search your anaconda instalation dir: (ex: C:\user\Anaconda3)
 3. Add to Path: (edit system environment vars - env vars - click on Path - edit - new )
